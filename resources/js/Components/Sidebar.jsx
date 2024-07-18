@@ -59,6 +59,13 @@ export default function Sidebar() {
         setPurchaseOpen(!isPurchaseOpen);
     };
 
+     //function logout
+     const logoutHandler = async (e) => {
+        e.preventDefault();
+
+        Inertia.post('/logout');
+    }
+
     return (
         <>
             <div className="list-group list-group-flush d-flex justify-content-center p-2">
@@ -411,6 +418,9 @@ export default function Sidebar() {
                                 </div>
                             </Link>
                         )}
+
+                            <Link className="fa fa-sign-out-alt me-2 btn btn-success shadow-sm rounded-sm px-4 w-100" href="/logout" method="post"  type="button">Logout</Link> 
+                            
                     </>
 
                
