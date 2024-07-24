@@ -419,7 +419,31 @@ export default function Sidebar() {
                             </Link>
                         )}
 
-                            <Link className="fa fa-sign-out-alt me-2 btn btn-success shadow-sm rounded-sm px-4 w-100" href="/logout" method="post"  type="button">Logout</Link> 
+
+                            <Link
+                                href="/logout"
+                                className={`${
+                                    url.startsWith("/logout")
+                                        ? "active list-group-item list-group-item-action list-group-item-light p-2 rounded-tops mb-2"
+                                      : "list-group-item list-group-item-action list-group-item-light rounded-tops p-3"
+                                     } text-light`}
+                                style={{ textDecoration: "none" }}
+                            >
+                                <div
+                                    className={`${
+                                        url.startsWith("/logout")
+                                            ? "active text-white "
+                                            : "text-second"
+                                         } text-light`}
+                                >
+                                    {" "}
+                                   
+                                    <Link className="fa fa-sign-out-alt me-2 btn btn-success shadow-sm rounded-sm px-4 w-100" href="/logout" method="post"  type="button">Logout</Link> 
+                                </div>
+                            </Link>
+                       
+
+                            
                             
                     </>
 
